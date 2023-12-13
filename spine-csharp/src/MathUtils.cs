@@ -35,6 +35,7 @@ namespace Spine {
 	public static class MathUtils {
 		public const float PI = 3.1415927f;
 		public const float PI2 = PI * 2;
+		public const float InvPI2 = 1 / PI2;
 		public const float RadDeg = 180f / PI;
 		public const float DegRad = PI / 180;
 
@@ -120,6 +121,10 @@ namespace Spine {
 			return (float)Math.Atan2(y, x);
 		}
 #endif
+		static public float Atan2Deg (float y, float x) {
+			return (float)Math.Atan2(y, x) * RadDeg;
+		}
+		
 		static public float Clamp (float value, float min, float max) {
 			if (value < min) return min;
 			if (value > max) return max;
